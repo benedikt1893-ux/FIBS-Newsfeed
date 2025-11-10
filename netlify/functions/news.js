@@ -12,7 +12,7 @@ const FEEDS = [
 
   // Deutsche Außen- & Sicherheitspolitik
   "https://www.bundeswehr.de/de/aktuelles.rss",
-  "https://www.bmvg.de/resource/blob/1622676/8eb63e7fcc277b8f73cf6634af2f70a4/rss-bmvg/Pressemitteilungen",
+  "https://www.bmvg.de/de.rss",
 
   // Internationale Top-Politik
   "http://feeds.bbci.co.uk/news/world/rss.xml",
