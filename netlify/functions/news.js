@@ -3,14 +3,21 @@ import Parser from "rss-parser";
 
 // Startliste: DE-offiziell & internationale Politik; du kannst später leicht erweitern
 const FEEDS = [
-  // DE – Offiziell / Sicherheit
-  "https://www.auswaertiges-amt.de/en/newsroom/newsletter/rss",
-  "https://www.bmvg.de/de/rss",
-  "https://www.bundeswehr.de/de/rss",
-  "http://feeds.bbci.co.uk/news/world/rss.xml",          // International: BBC World
-  "https://rss.dw.com/rdf/rss-en-top",                   // DW Top Stories
-  "https://apnews.com/index.rss"                         // AP – breite Weltpolitik
-  // Später: Spiegel/FAZ/ZEIT/SZ/WELT/ntv Politik-Feeds ergänzen
+  // Deutsche Politik/Top-News
+  "https://www.tagesschau.de/xml/rss2",
+  "https://www.spiegel.de/politik/index.rss",
+  "https://www.zeit.de/politik/index.xml",
+  "https://www.faz.net/rss/aktuell/politik/?rssview=1",
+  "https://www.sueddeutsche.de/politik/rss",
+
+  // Deutsche Außen- & Sicherheitspolitik
+  "https://www.bundeswehr.de/de/aktuelles.rss",
+  "https://www.bmvg.de/resource/blob/1622676/8eb63e7fcc277b8f73cf6634af2f70a4/rss-bmvg/Pressemitteilungen",
+
+  // Internationale Top-Politik
+  "http://feeds.bbci.co.uk/news/world/rss.xml",
+  "https://rss.dw.com/rdf/rss-en-top",
+  "https://apnews.com/index.rss"
 ];
 
 const parser = new Parser({
