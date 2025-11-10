@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Politik & Sicherheit – Newsfeed</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 860px; margin: 2rem auto; padding: 0 1rem; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap; }
+    .item { margin: 0 0 1rem; padding: 0 0 1rem; border-bottom: 1px solid #ddd; }
+    .meta { font-size: 0.9rem; color: #666; }
+    .badges { font-size:.8rem; color:#555; }
+    .badges span { margin-right:.5rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Politik & Sicherheit – Newsfeed</h1>
+    <div class="badges">
+      <span>🇩🇪 Fokus: DE-Quellen</span> <span>🌍 Top-Politik weltweit</span>
+    </div>
+  </header>
+  <p>Die Liste unten wird aus mehreren Nachrichten-Feeds erzeugt.</p>
+  <div id="list">Lade…</div>
+  <script>
+    fetch("/.netlify/functions/news")
+      .then(r => r.json())
+      .then(items => {
+        document.getElementById("list").innerHTML = items.map(i => `
+          <div class="item">
+            <a href="${i.link}" target="_blank" rel="noopener">${i.title}</a>
+            <div class="meta">${new Date(i.date).toLocaleString("de-DE")} — ${i.source}</div>
+            <div>${i.summary ?? ""}</div>
+          </div>
+        `).join("");
+      })
+      .catch(e => { document.getElementById("list").textContent = "Fehler beim Laden: " + e; });
+  </script>
+</body>
+</html>
