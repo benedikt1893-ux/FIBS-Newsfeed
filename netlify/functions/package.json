@@ -1,0 +1,8 @@
+{
+  "name": "newsfeed-politik",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "rss-parser": "^3.14.0"
+  }
+}
