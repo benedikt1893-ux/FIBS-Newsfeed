@@ -1,0 +1,11 @@
+[build]
+  publish = "src"           # hier liegt index.html
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"  # Netlify bundelt die Function automatisch
+
+# (Optional) später für Cron-Jobs:
+# [[scheduled.functions]]
+#   name = "refresh"
+#   cron = "*/15 * * * *"
