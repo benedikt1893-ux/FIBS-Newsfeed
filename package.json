@@ -3,6 +3,6 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "rss-parser": "^3.14.0"
+    "rss-parser": "3.12.0"
   }
 }
